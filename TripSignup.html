@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sign up</title>
+        <link rel="stylesheet" href="Tripping.css">
+        <script src="Signup.js"></script>
+    </head>
+
+    <body>
+        <header>
+            <div>
+                <img src="" alt="">
+            </div>
+        </header>
+
+        <main>
+            <div class="form-container">
+                <h2>Create Your Profile</h2>
+                <form id="signUpForm">
+                    <div class="form-group">
+                        <label for="fullName">Full Name:</label>
+                        <input type="text" id="fullName" name="fullName" required>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label for="UserName">UserName:</label>
+                        <input type="text" id="UserName" name="UserName" required>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label for="confirmPassword">Confirm Password:</label>
+                        <input type="password" id="confirmPassword" name="confirmPassword" required>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label for="dob">Date of Birth:</label>
+                        <input type="date" id="dob" name="dob" required>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label for="gender">Gender:</label>
+                        <select id="gender" name="gender" required>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="other">Other</option>
+                        </select>
+                        <br>
+                        <legend>Choose Your Preferences:</legend>
+        <div class="checkbox-group">
+          <input type="checkbox" id="streetFood" name="preference" value="Street Food">
+          <label for="streetFood">Street Food Lover</label><br>
+
+          <input type="checkbox" id="restaurant" name="preference" value="Restaurant">
+          <label for="restaurant">Restaurant Enthusiast</label><br>
+
+          <input type="checkbox" id="museum" name="preference" value="Museum">
+          <label for="museum">Museum Buff</label><br>
+
+          <input type="checkbox" id="nightlife" name="preference" value="nightlife">
+          <label for="nightlife">Nightlife Explorer</label><br>
+
+          <input type="checkbox" id="concert" name="preference" value="concert">
+          <label for="concert">Concert Goer</label><br>
+
+          <input type="checkbox" id="theater" name="preference" value="theater">
+          <label for="theater">Theater Lover</label><br>
+
+          <input type="checkbox" id="beach" name="preference" value="beach">
+          <label for="beach">Beach Bum</label><br>
+
+          <input type="checkbox" id="adventure" name="preference" value="adventure">
+          <label for="adventure">Adventure Seeker</label><br>
+
+          <input type="checkbox" id="history" name="preference" value="history">
+          <label for="history">History Enthusiast</label><br>
+
+          <input type="checkbox" id="meat" name="preference" value="meat">
+          <label for="meat">Meat Lover</label><br>
+
+          <input type="checkbox" id="veg" name="preference" value="veg">
+          <label for="veg">Vegan</label><br>
+
+          <input type="checkbox" id="shop" name="preference" value="shop">
+          <label for="shop">Shopping Aficionado</label><br>
+
+          <input type="checkbox" id="nature" name="preference" value="nature">
+          <label for="nature">Nature Enthusiast</label><br>
+
+          <input type="checkbox" id="spa" name="preference" value="spa">
+          <label for="spa">Spa and Wellness</label><br>
+
+          <input type="checkbox" id="culture" name="preference" value="culture">
+          <label for="culture">Cultural Explorer</label><br>
+
+          <input type="checkbox" id="book" name="preference" value="book">
+          <label for="book">Bookworm</label><br>
+
+          <input type="checkbox" id="sport" name="preference" value="sport">
+          <label for="sport">Sporting Enthusiast</label><br>
+
+          <input type="checkbox" id="photo" name="preference" value="photo">
+          <label for="photo">Photograoher</label><br>
+
+          <input type="checkbox" id="lukury" name="preference" value="luxury">
+          <label for="luxury">Luxury Travel</label><br>
+
+          <input type="checkbox" id="eco" name="preference" value="eco">
+          <label for="eco">Eco-Friendly Traveler</label><br>
+
+          <input type="checkbox" id="religion" name="preference" value="religion">
+          <label for="religion">Religious Explorer </label><br>
+
+          <br>
+          <br>
+
+        </fieldset>
+        <fieldset>
+          <legend>Upload Your Picture:</legend>
+          <input type="file" id="imageUpload" accept="image/*"><br>
+          <div class="image-preview" id="imagePreview">
+            <img id="previewImage" src="#" alt="Your Image" style="display: none;">
+          </div>
+        </fieldset>
+
+                        <div class="form-group">
+                            <label for="terms">
+                                <input type="checkbox" id="terms" name="terms" required>
+                                I agree to the  <a href="">terms and conditions</a>
+                            </label>
+                    </div>
+                
+                    <br>
+                    <button type="submit" class="signb" onclick="location.href='Logged_Home.html'">Sign Up</button>
+                </form>
+            </div>
+        </main>
+    </body>
+</html>

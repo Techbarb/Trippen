@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bucket List Creator</title>
+    <link rel="stylesheet" href="bucketlist.css">
+</head>
+<body>
+    <header>
+        
+    </header>
+    <div class="container">
+      <h1>Bucket List</h1>
+        <input type="text" id="listNameInput" placeholder="Enter a new list name">
+        <button id="createListButton">Create List</button>
+        
+        <h2>Your Bucket Lists</h2>
+        <ul id="bucketLists"></ul>
+        
+        <div id="listContainer" class="hidden">
+            <h2 id="currentListName"></h2>
+            <input type="text" id="bucketInput" placeholder="Enter a bucket list item">
+            <button id="addItemButton">Add</button>
+            <ul id="bucketList"></ul>
+            <button id="backButton">Back to Lists</button>
+        </div>
+    </div>
+    <script src="bucketlist.js"></script>
+</body>
+</html>

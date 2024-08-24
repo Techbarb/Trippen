@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <Title>Preferences</Title>
+        <link rel="stylesheet" href="preference.css">
+        <script defer src="Preferences.js"></script>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+    </head>
+
+    <body>
+        <header></header>
+        <div>
+            <form id="preferencesForm" onsubmit="savePreferences(event)">    
+        <div class="section1">
+            <h2>Availability</h2>
+            <br>
+            <div class="wrapper">
+                <header>
+                    <p class="current-date"></p>
+                    <div class="icons">
+                        <span id="prev"class="material-symbols-rounded">chevron_left</span>
+                        <span id="next" class="material-symbols-rounded">chevron_right</span>
+                    </div>
+                </header>
+                <div class="calendar">
+                    <ul class="weeks">
+                        <li>Sun</li>
+                        <li>Mon</li>
+                        <li>Tue</li>
+                        <li>Wed</li>
+                        <li>Thu</li>
+                        <li>Fri</li>
+                        <li>Sat</li>
+                    </ul>
+                    <ul class="days">
+                    
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+        <br>
+        <br>
+
+        <div class="section2">
+            <h2>Budget </h2>
+            <br>
+            <select id="currency" class="currency">
+                <option value="USD">USD</option>
+                <option value="EUR">EUR</option>
+                <option value="GBP">GBP</option>
+                <option value="JPY">JPY</option>
+                <option value="NGN">NGN</option>
+                <option value="AUD">AUD</option>
+                <option value="CAD">CAD</option>
+                <option value="CHF">CHF</option>
+                <option value="CNY">CNY</option>
+                <option value="SEK">SEK</option>
+                <option value="NZD">NZD</option>
+            </select>
+             <input type="number" id="budget" class="budget">
+             
+        </div> 
+        <br>
+        <br>
+        <div class="section3">
+            <h2>Trip Type</h2>
+            <div class="checkbox-group">
+                <input type="checkbox" id="cruise" name="preference" value="Cruise Trip">
+                <label for="cruiseTrip">Cruise Trip</label><br>
+      
+                <input type="checkbox" id="solo" name="preference" value="solo trio">
+                <label for="solo">Solo Trip</label><br>
+      
+                <input type="checkbox" id="road" name="preference" value="Road Trip">
+                <label for="road">Road Trip</label><br>
+      
+                <input type="checkbox" id="adventure" name="preference" value="Adventure Tourism">
+                <label for="adventure">Adventure Tourism</label><br>
+      
+                <input type="checkbox" id="business" name="preference" value="business">
+                <label for="business">Business Trip</label><br>
+      
+                <input type="checkbox" id="camping" name="preference" value="camping">
+                <label for="camping">Camping Trip</label><br>
+      
+                <input type="checkbox" id="beach" name="preference" value="beach">
+                <label for="beach">Beach Vacation</label><br>
+      
+                <input type="checkbox" id="Cultural" name="preference" value="Cultural">
+                <label for="Cultural">Cultural Tourism & Vacation</label><br>
+
+                <input type="checkbox" id="spa" name="preference" value="spa">
+                <label for="spa">Relaxation Travel</label><br>
+      
+                <input type="checkbox" id="shop" name="preference" value="shop">
+                <label for="shop">Luxurous Vacation</label><br>
+      
+                <input type="checkbox" id="nature" name="preference" value="nature">
+                <label for="nature">Nature Enthusiast</label><br>
+      
+                <input type="checkbox" id="religion" name="preference" value="religion">
+                <label for="religion">Religious Travel </label><br>
+                <br>
+                <br>
+                
+        </div>
+    </div>
+
+    <button type="submit" class="submit" onclick="location.href='Planning.html'">Submit</button>
+            </form>
+    <footer>
+        
+    </footer>
+    </body>
+</html>
