@@ -80,3 +80,21 @@ function fetchResults(query) {
         }
     });
 }
+
+document.getElementById("profileIcon").addEventListener("click", function() {
+    var dropdown = document.getElementById("profileDropdown");
+    dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+});
+
+// Close the dropdown if the user clicks outside of it
+window.addEventListener("click", function(event) {
+    if (!event.target.matches('.profile-icon')) {
+        var dropdowns = document.getElementsByClassName("dropdown-menu");
+        for (var i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.style.display === "block") {
+                openDropdown.style.display = "none";
+            }
+        }
+    }
+});
