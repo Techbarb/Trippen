@@ -7,7 +7,7 @@
 </head>
 <body>
     <header>
-        <img src="Trippen.jpg" alt="" class="Trippen">
+        <img src="Trippen.jpg" alt="Logo" class="Trippen">
         <div class="links">
             <a href="">Restaurants</a>
             <a href="">Hotels</a>
@@ -15,20 +15,23 @@
             <a href="">Rentals</a>
             <a href="">Budget Planner</a>
         </div>
-        
+        <div class="profile-container">
+            <a onclick="location.href='Profile.html'">  <img src="profile.jpg" alt="Profile" class="profile-icon" id="profileIcon"></a>
+        </div>
     </header>
+    
 
     <br>
     <br>
     <h2>Where to?</h2>
     <div class="container">
-        <button class="plan" onclick="location.href='Preferences.html'"><b>LET'S PLAN</button>
+        <button class="plan" onclick="location.href='Preferences.html'" id="plan"><b>LET'S PLAN</button>
     </div>
     <br>
     <br>
     <div class="search-container">
         <input type="search" class="search-box" placeholder="Things to do, hotels, activities...">
-        <button class="search-button">Search</button>
+        <button class="search-button" id="search">Search</button>
     </div>
 
     <br>
