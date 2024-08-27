@@ -1,0 +1,91 @@
+body{
+    background-color: thistle;
+}
+
+header{
+    background-color: white;
+    height: 35px;
+}
+
+.Trippen{
+    width: 50px;
+    height: 30px;
+    border-radius: 5px;
+
+}
+
+.search-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-box{
+    width: 500px;
+    height: 40px;
+    border-radius: 10px;
+}
+
+.search-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.image-container{
+    position: relative;
+    width: 80%;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.images{
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+figure {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+figcaption {
+    margin-top: 5px;
+    font-size: 14px;
+    color: #555;
+}
+
+.carousel{
+    height: 500px;
+    min-width: calc(100% - 20px); /* Adjust width to include margin */
+    margin-right: 20px; /* Space between images */
+    transition: transform 0.5s ease-in-out;
+
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1;
+}
+
+.carousel-button.left {
+    left: 10px;
+}
+
+.carousel-button.right {
+    right: 10px;
+}
