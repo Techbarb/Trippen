@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Location Details</title>
+    <link rel="stylesheet" href="details.css">
+</head>
+<body>
+    <header>
+        <h1 id="location-name"></h1>
+    </header>
+    <div class="details">
+        <h2>Activities</h2>
+        <div id="activities-list"></div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const locationName = urlParams.get('location');
+            const budget = JSON.parse(decodeURIComponent(urlParams.get('budget')));
+            const preferences = JSON.parse(decodeURIComponent(urlParams.get('preferences')));
+
+            document.getElementById('location-name').innerText = locationName;
+
+            const activitiesList = document.getElementById('activities-list');
+            let activities = getActivities(locationName, preferences, budget);
+
+            activities.forEach(activity => {
+                let activityDiv = document.createElement('div');
+                activityDiv.className = 'activity';
+                activityDiv.innerHTML = `
+                    <h3>${activity.name}</h3>
+                    <p>Type: ${activity.type}</p>
+                    <p>Cost: £${activity.cost}</p>
+                `;
+                activityDiv.addEventListener('click', () => {
+                    showDetails(activity.name);
+                });
+                activitiesList.appendChild(activityDiv);
+            });
+        });
+
+        function getActivities(locationName, preferences, budget) {
+            // Mock data for activities
+            const allActivities = [
+    { name: "Shopping at Harrods", type: "shop", location: "London", cost: 100 },
+    { name: "Edinburgh Castle Tour", type: "Cultural", location: "Edinburgh", cost: 50 },
+    { name: "Manchester Museum Visit", type: "solo", location: "Manchester", cost: 20 },
+    { name: "Liverpool Maritime Museum", type: "Cultural", location: "Liverpool", cost: 30 },
+    { name: "Road Trip in the Highlands", type: "road", location: "Glasgow", cost: 150 },
+    { name: "Bristol Zoo Visit", type: "solo", location: "Bristol", cost: 40 },
+    { name: "Business Conference", type: "business", location: "Birmingham", cost: 200 },
+    { name: "Solo Travel Adventure", type: "solo", location: "Leeds", cost: 60 },
+    { name: "Newcastle Quayside Walk", type: "road", location: "Newcastle", cost: 15 },
+    { name: "Cardiff Castle Tour", type: "Cultural", location: "Cardiff", cost: 25 },
+    { name: "Shopping in Cambridge", type: "shop", location: "Cambridge", cost: 70 },
+    { name: "Oxford University Tour", type: "shop", location: "Oxford", cost: 80 },
+    { name: "Southampton Boat Trip", type: "road", location: "Southampton", cost: 120 },
+    { name: "Spa Day at Bath", type: "spa", location: "Bath", cost: 150 },
+    { name: "Nottingham Forest Walk", type: "solo", location: "Nottingham", cost: 10 },
+    { name: "Brighton Beach Day", type: "beach", location: "Brighton", cost: 0 },
+    { name: "Brighton Central Beach", type: "beach", location: "Brighton", cost: 0 },
+    { name: "Rottingdean Beach", type: "beach", location: "Brighton", cost: 0 },
+    { name: "York Minster Visit", type: "Cultural", location: "York", cost: 35 },
+    { name: "Camping in Aberdeen", type: "camping", location: "Aberdeen", cost: 40 },
+    { name: "Norwich Cathedral Tour", type: "solo", location: "Norwich", cost: 25 },
+    { name: "Inverness Nature Hike", type: "nature", location: "Inverness", cost: 20 },
+    { name: "Plymouth Coastal Walk", type: "beach", location: "Plymouth", cost: 20 },
+    { name: "Camping in Lake District", type: "camping", location: "Lake District", cost: 50 },
+    { name: "Cornwall Scenic Drive", type: "road", location: "Cornwall", cost: 100 },
+    { name: "Isle of Skye Adventure Tour", type: "adventure", location: "Isle of Skye", cost: 200 },
+    { name: "Shopping in Windsor", type: "shop", location: "Windsor", cost: 60 },
+    // Add more activities as needed
+];
+
+
+            return allActivities.filter(activity => 
+                activity.location === locationName &&
+                preferences.includes(activity.type) &&
+                activity.cost <= budget
+            );
+        }
+
+        function showDetails(activityName) {
+            // Redirect to a detailed page or show more information
+            alert(`Details for ${activityName} will be shown here.`);
+            // You can also redirect to another page if needed
+            // window.location.href = `details-page.html?activity=${encodeURIComponent(activityName)}`;
+        }
+    </script>
+</body>
+</html>
