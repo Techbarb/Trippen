@@ -1,16 +1,127 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Planning</title>
-        <link rel="stylesheet" href="planning.css">
-        <script src="planning.js"></script>
-    </head>
+<head>
+    <title>Trip Planning</title>
+    <link rel="stylesheet" href="planning.css">
+</head>
+<body>
+    <header>
+        <h1>Suggested Trip Locations</h1>
+    </header>
+    <div class="trip-locations">
+        <h2>Based on Your Preferences</h2>
+        <div id="location-list"></div>
+    </div>
 
-    <body>
-        <header></header>
-        <div class="container">
-            <h1>Locations</h1>
-            <div id="tripSuggestions"></div>
-        </div>
-    </body>
-    </html>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Retrieve user preferences from localStorage
+            const preferences = JSON.parse(localStorage.getItem('preferences'));
+
+            // Display the trip locations
+            const locationList = document.getElementById('location-list');
+            let locations = getLocations(preferences);
+
+            locations.forEach(location => {
+                let locationDiv = document.createElement('div');
+                locationDiv.className = 'location';
+                locationDiv.innerHTML = `
+                    <h3>${location.name}</h3>
+                    <p>Type: ${location.type}</p>
+                    <p>Best Time: ${location.bestTime}</p>
+                    <button onclick="redirectToDetails('${location.name}')">View Details</button>
+                `;
+                locationList.appendChild(locationDiv);
+            });
+        });
+
+        function getLocations(preferences) {
+            // Mock data for locations
+            const allLocations = [
+                { name: "London", type: "shop", bestTime: "May to September" },
+{ name: "Edinburgh", type: "Cultural", bestTime: "August" },
+{ name: "Manchester", type: "solo", bestTime: "June to August" },
+{ name: "Liverpool", type: "Cultural", bestTime: "May to September" },
+{ name: "Glasgow", type: "road", bestTime: "June to August" },
+{ name: "Bristol", type: "solo", bestTime: "May to September" },
+{ name: "Birmingham", type: "business", bestTime: "May to September" },
+{ name: "Leeds", type: "solo", bestTime: "June to August" },
+{ name: "Newcastle", type: "road", bestTime: "May to September" },
+{ name: "Cardiff", type: "Cultural", bestTime: "May to September" },
+{ name: "Cambridge", type: "shop", bestTime: "May to September" },
+{ name: "Oxford", type: "shop", bestTime: "May to September" },
+{ name: "Southampton", type: "road", bestTime: "May to September" },
+{ name: "Bath", type: "spa", bestTime: "May to September" },
+{ name: "Nottingham", type: "solo", bestTime: "April to August" },
+{ name: "Brighton", type: "beach", bestTime: "June to August" },
+{ name: "York", type: "Cultural", bestTime: "May to September" },
+{ name: "Aberdeen", type: "camping", bestTime: "June to August" },
+{ name: "Norwich", type: "solo", bestTime: "May to September" },
+{ name: "Inverness", type: "nature", bestTime: "June to August" },
+{ name: "Plymouth", type: "beach", bestTime: "June to August" },
+{ name: "Lake District", type: "camping", bestTime: "June to August" },
+{ name: "Cornwall", type: "road", bestTime: "June to August" },
+{ name: "Isle of Skye", type: "adventure", bestTime: "May to September" },
+{ name: "Windsor", type: "shop", bestTime: "April to October" },
+{ name: "London", type: "shop", bestTime: "May to September" },
+{ name: "Bath", type: "shop", bestTime: "May to September" },
+{ name: "Edinburgh", type: "shop", bestTime: "June to August" },
+{ name: "Cambridge", type: "shop", bestTime: "May to September" },
+{ name: "Oxford", type: "shop", bestTime: "May to September" },
+{ name: "Windsor", type: "shop", bestTime: "April to October" },
+{ name: "Cheltenham", type: "shop", bestTime: "June to September" },
+{ name: "York", type: "shop", bestTime: "May to September" },
+{ name: "Chester", type: "shop", bestTime: "May to September" },
+{ name: "Harrogate", type: "shop", bestTime: "May to September" },
+{ name: "Bath", type: "spa", bestTime: "May to September" },
+{ name: "Brighton", type: "beach", bestTime: "June to August" },
+{ name: "Harrogate", type: "spa", bestTime: "May to September" },
+{ name: "Torquay", type: "beach", bestTime: "June to August" },
+{ name: "Bournemouth", type: "beach", bestTime: "June to September" },
+{ name: "Llandudno", type: "spa", bestTime: "May to September" },
+{ name: "Scarborough", type: "beach", bestTime: "June to August" },
+{ name: "Cheltenham", type: "spa", bestTime: "May to September" },
+{ name: "Windsor", type: "Relaxation", bestTime: "April to October" },
+{ name: "Isle of Wight", type: "spa", bestTime: "June to September" },
+{ name: "London", type: "Cultural", bestTime: "May to September" },
+{ name: "Edinburgh", type: "Cultural", bestTime: "August" },
+{ name: "Liverpool", type: "Cultural", bestTime: "May to September" },
+{ name: "York", type: "Cultural", bestTime: "May to September" },
+{ name: "Bath", type: "Cultural", bestTime: "May to September" },
+{ name: "Oxford", type: "Cultural", bestTime: "May to September" },
+{ name: "Cambridge", type: "Cultural", bestTime: "May to September" },
+{ name: "Glasgow", type: "Cultural", bestTime: "June to August" },
+{ name: "Nottingham", type: "Cultural", bestTime: "April to August" },
+{ name: "Bristol", type: "Cultural", bestTime: "May to September" },
+{ name: "Durham", type: "Cultural", bestTime: "May to September" },
+{ name: "Canterbury", type: "Cultural", bestTime: "May to September" }, 
+{ name: "Brighton", type: "beach", bestTime: "June to August" },
+{ name: "Plymouth", type: "beach", bestTime: "June to August" },
+{ name: "Bournemouth", type: "beach", bestTime: "May to September" },
+{ name: "Newquay", type: "beach", bestTime: "May to September" },
+{ name: "Margate", type: "beach", bestTime: "June to September" },
+{ name: "Blackpool", type: "beach", bestTime: "May to September" },
+{ name: "Cromer", type: "beach", bestTime: "June to August" },
+{ name: "Scarborough", type: "beach", bestTime: "May to September" },
+{ name: "Weston-super-Mare", type: "beach", bestTime: "May to September" },
+{ name: "Southend-on-Sea", type: "beach", bestTime: "May to September" }
+
+
+
+
+                // Add more locations as needed
+            ];
+
+            // Filter locations based on user preferences
+            return allLocations.filter(location => 
+                preferences.includes(location.type)
+            );
+        }
+
+        function redirectToDetails(locationName) {
+            // Redirect to the location details page with the location name as a query parameter
+            window.location.href = `location-details.html?location=${encodeURIComponent(locationName)}`;
+        }
+    </script>
+</body>
+</html>
